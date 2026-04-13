@@ -9,6 +9,7 @@ import re
 import unicodedata
 from datetime import datetime, timezone, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from html import escape
 from urllib.parse import urljoin, urlparse
 
 import requests
@@ -36,11 +37,16 @@ KEYWORDS_GENERAL = [
     "professor adjunto",
     "professor auxiliar",
     "professor titular",
+    "professor substituto",
+    "professor temporario",
     "processo seletivo docente",
+    "processo seletivo simplificado",
+    "selecao simplificada",
     "selecao de docentes",
     "vaga para docente",
     "concurso publico docente",
     "docente efetivo",
+    "docente substituto",
     "contratacao de professor",
     "concurso para professor",
     "edital docente",
@@ -59,7 +65,7 @@ KEYWORDS_IF_BIOLOGY = [
 
 # Padrão para identificar Institutos Federais pelo domínio
 IF_PATTERN = re.compile(
-    r"(^|\.)(if[a-z]+|cefet[a-z-]*)\.edu\.br",
+    r"(?:^|\.)(?:if[a-z-]+\.edu\.br|cefet[a-z-]*(?:\.edu)?\.br)$",
     re.IGNORECASE,
 )
 
@@ -237,12 +243,14 @@ def fetch(url: str, timeout: int = REQUEST_TIMEOUT):
 def find_links(soup: BeautifulSoup, base_url: str) -> list:
     """Retorna links do mesmo domínio que possivelmente levam a páginas de concurso."""
     base_domain = urlparse(base_url).netloc
-    seen: set = set()
+    seen: set = {base_url}  # exclui a própria página principal
     result: list = []
 
     for tag in soup.find_all("a", href=True):
         href = str(tag["href"])
-        ext = "." + href.rsplit(".", 1)[-1].lower() if "." in href.rsplit("/", 1)[-1] else ""
+        # Strip query string and fragment before checking extension
+        last_segment = href.rsplit("/", 1)[-1].split("?")[0].split("#")[0]
+        ext = "." + last_segment.rsplit(".", 1)[-1].lower() if "." in last_segment else ""
         if ext in SKIP_EXTENSIONS:
             continue
 
@@ -297,9 +305,11 @@ def monitor_site(url: str) -> dict:
         result["matches"].extend(found)
 
     # ── Subpáginas relevantes ─────────────────
+    visited_subs: set = {final}  # evita reprocessar a página principal ou duplicatas
     for link in find_links(soup, final):
         sub_html, sub_final = fetch(link, timeout=15)
-        if sub_html:
+        if sub_html and sub_final not in visited_subs:
+            visited_subs.add(sub_final)
             sub_text = BeautifulSoup(sub_html, "lxml").get_text(" ", strip=True)
             sub_found = search_keywords(sub_text, keywords)
             if sub_found:
@@ -319,7 +329,8 @@ def monitor_site(url: str) -> dict:
 # ──────────────────────────────────────────────
 
 def _card(r: dict) -> str:
-    domain = urlparse(r["url"]).netloc
+    domain = escape(urlparse(r["url"]).netloc)
+    url_attr = escape(r["url"], quote=True)
     cls = "c-found" if r["status"] == "found" else ("c-error" if r["status"] == "error" else "c-none")
     badge = '<span class="badge-if">Instituto Federal</span>' if r["is_if"] else ""
     pill = f'<span class="pill">{len(r["matches"])} ocorrência(s)</span>' if r["matches"] else ""
@@ -328,20 +339,20 @@ def _card(r: dict) -> str:
     if r["pages"]:
         items = "".join(
             f'<li>'
-            f'<a href="{p["url"]}" target="_blank" rel="noopener noreferrer">{p["url"]}</a>'
+            f'<a href="{escape(p["url"], quote=True)}" target="_blank" rel="noopener noreferrer">{escape(p["url"])}</a>'
             f'<div class="tags">'
-            + "".join(f'<span class="tag">{k}</span>' for k in p["kws"])
+            + "".join(f'<span class="tag">{escape(k)}</span>' for k in p["kws"])
             + f'</div></li>'
             for p in r["pages"]
         )
         pages_html = f"<ul>{items}</ul>"
 
-    err_html = f'<p class="errmsg">{r["error"]}</p>' if r.get("error") else ""
+    err_html = f'<p class="errmsg">{escape(str(r["error"]))}</p>' if r.get("error") else ""
 
     return (
         f'<div class="card {cls}">'
         f'<div class="card-top">'
-        f'<div><a href="{r["url"]}" target="_blank" rel="noopener noreferrer" class="site-url">{domain}</a>{badge}</div>'
+        f'<div><a href="{url_attr}" target="_blank" rel="noopener noreferrer" class="site-url">{domain}</a>{badge}</div>'
         f"{pill}"
         f"</div>"
         f"{pages_html}{err_html}"

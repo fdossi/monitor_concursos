@@ -2,10 +2,225 @@
 # Monitor de Concursos Docentes — sites.txt
 # =============================================================
 # Um URL por linha. Linhas com # são comentários.
-# Institutos Federais são detectados automaticamente pelo domínio
-# (if*.edu.br ou cefet*.edu.br) e recebem busca adicional de
+# Institutos Federais são detectados automaticamente por domínio
+# (if*.edu.br / cefet*.edu.br) e recebem busca adicional de
 # palavras-chave de Biologia / Ciências Biológicas.
 # =============================================================
+
+# ── PORTAIS/ÍNDICES (úteis para descoberta de editais) ────────
+https://www.gov.br/mec/pt-br/assuntos/es/universidades-federais
+https://www.gov.br/mec/pt-br/assuntos/ept/rede-federal/institutos-federais-de-educacao-ciencia-e-tecnologia
+https://www.abruem.org.br/index.php?Itemid=279&id=94&option=com_content&view=article
+https://www.gov.br/mcti/pt-br/rede-mcti
+
+# ── UNIVERSIDADES FEDERAIS — PÁGINAS DIRETAS DE CONCURSO ──────
+https://www.ufba.br/concursos
+https://www.ufs.br/concurso
+https://www.ufpe.br/concursos
+https://www.ufrn.br/concursos
+https://www.ufpb.br/concursos
+https://www.ufc.br/concursos
+https://www.ufpi.br/concursos
+https://www.ufma.br/concursos
+https://www.ufal.edu.br/concursos
+https://www.ufes.br/concursos
+https://www.univasf.edu.br/concursos
+https://ufnt.edu.br/concursos-2/
+https://www.concursos.ufape.edu.br/
+
+# ── NORTE ─────────────────────────────────────────────────────
+https://www.ufac.br/
+https://www.unifap.br/
+https://www.ufam.edu.br/
+https://www.ufpa.br/
+https://www.ufopa.edu.br/
+https://www.ufra.edu.br/
+https://www.unifesspa.edu.br/
+https://www.ufrr.br/
+https://www.unir.br/
+https://www.uft.edu.br/
+https://www.ufnt.edu.br/
+
+# ── NORDESTE ──────────────────────────────────────────────────
+https://www.ufma.br/
+https://www.ufpi.br/
+https://www.ufdpar.edu.br/
+https://www.ufc.br/
+https://www.ufca.edu.br/
+https://www.unilab.edu.br/
+https://www.ufrn.br/
+https://www.ufersa.edu.br/
+https://www.ufpb.br/
+https://www.ufcg.edu.br/
+https://www.ufpe.br/
+https://www.ufrpe.br/
+https://www.univasf.edu.br/
+https://www.ufape.edu.br/home
+https://www.ufal.edu.br/
+https://www.ufs.br/
+https://www.ufba.br/
+https://www.ufrb.edu.br/
+https://www.ufsb.edu.br/
+https://www.ufob.edu.br/
+
+# ── SUDESTE ───────────────────────────────────────────────────
+https://www.ufes.br/
+https://www.ufrj.br/
+https://www.uff.br/
+https://www.unirio.br/
+https://www.ufrrj.br/
+https://www.ufsj.edu.br/
+https://www.ufmg.br/
+https://www.ufv.br/
+https://www.ufjf.br/
+https://www.ufla.br/
+https://www.ufop.br/
+https://www.uftm.edu.br/
+https://www.ufu.br/
+https://www.ufvjm.edu.br/
+https://www.unifal-mg.edu.br/
+https://www.unifei.edu.br/
+https://www.ufabc.edu.br/
+https://www.unifesp.br/
+https://www.ufscar.br/
+
+# ── SUL ───────────────────────────────────────────────────────
+https://www.utfpr.edu.br/
+https://www.ufpr.br/
+https://www.uffs.edu.br/
+https://www.unila.edu.br/
+https://www.unipampa.edu.br/
+https://www.ufcspa.edu.br/
+https://www.ufsm.br/
+https://www.ufrgs.br/
+https://www.ufpel.edu.br/
+https://www.furg.br/
+https://ufsc.br/
+
+# ── CENTRO-OESTE ──────────────────────────────────────────────
+https://www.ufr.edu.br/
+https://www.ufmt.br/
+https://www.ufg.br/
+https://www.ufcat.edu.br/
+https://www.ufj.edu.br/
+https://www.unb.br/
+https://www.ufms.br/
+https://www.ufgd.edu.br/
+
+# ── INSTITUTOS FEDERAIS ───────────────────────────────────────
+https://portal.ifac.edu.br/
+https://www2.ifal.edu.br/
+https://ifap.edu.br/
+https://www2.ifam.edu.br/
+https://portal.ifba.edu.br/
+https://ifbaiano.edu.br/
+https://www.ifb.edu.br/
+https://ifce.edu.br/
+https://www.ifes.edu.br/
+https://www.ifg.edu.br/
+https://ifgoiano.edu.br/
+https://portal.ifma.edu.br/
+https://www.ifmg.edu.br/
+https://www.ifnmg.edu.br/
+https://www.ifmt.edu.br/
+https://www.ifms.edu.br/
+https://www.ifro.edu.br/
+https://www.ifrr.edu.br/
+https://www.ifto.edu.br/
+https://www.ifpa.edu.br/
+https://www.ifpi.edu.br/
+https://www.ifrn.edu.br/
+https://www.ifpb.edu.br/
+https://www.ifpe.edu.br/
+https://www.ifsertaope.edu.br/
+https://www.ifs.edu.br/
+https://www.ifc.edu.br/
+https://www.ifsc.edu.br/
+https://www.ifrs.edu.br/
+https://www.iffarroupilha.edu.br/
+https://www.ifsul.edu.br/
+https://www.iff.edu.br/
+https://www.ifrj.edu.br/
+https://www.ifsp.edu.br/
+https://www.ifpr.edu.br/
+https://www.ifsuldeminas.edu.br/
+https://www.iftm.edu.br/
+https://www.ifsudestemg.edu.br/
+https://www.cefetmg.br/
+https://www.cefet-rj.br/
+https://www.cp2.g12.br/
+
+# ── UNIVERSIDADES ESTADUAIS ───────────────────────────────────
+https://www.uncisal.edu.br/
+https://uneal.edu.br/
+https://www.uea.edu.br/
+https://www.ueap.edu.br/
+https://www.uneb.br/
+https://www.uefs.br/
+https://www.uesb.br/
+https://www.uesc.br/
+https://www.uece.br/
+https://www.urca.br/
+https://www.uvanet.br/
+https://www.upe.br/
+https://www.ueg.br/
+https://www.uema.br/
+https://www.uemasul.edu.br/
+https://www.uemg.br/
+https://www.unimontes.br/
+https://www.uems.br/
+https://www.uepa.br/
+https://www.uespi.br/
+https://www.uerj.br/
+https://www.uenf.br/
+https://www.uern.br/
+https://www.uergs.edu.br/
+https://www.uerr.edu.br/
+https://www.unitins.br/
+https://www.usp.br/
+https://www.unicamp.br/
+https://www.unesp.br/
+https://www.udesc.br/
+https://www.unemat.br/
+https://www.uel.br/
+https://www.uem.br/
+https://www.uepg.br/
+https://www.unicentro.br/
+https://www.unioeste.br/
+https://www.uenp.edu.br/
+https://www.unespar.edu.br/
+
+# ── INSTITUIÇÕES DE PESQUISA (REDE MCTI) ─────────────────────
+https://portal.fiocruz.br/
+https://www.cnpem.br/
+https://www.embrapa.br/
+https://www.impa.br/
+https://www.cbpf.br/
+https://www.cemaden.gov.br/
+https://www.cetem.gov.br/
+https://www.cetene.gov.br/
+https://www.cti.gov.br/
+https://ibict.br/
+https://www.inpa.gov.br/
+https://www.gov.br/inpe/pt-br
+https://www.gov.br/insa/pt-br
+https://www.gov.br/int/pt-br
+https://www.gov.br/lna/pt-br
+https://www.gov.br/lncc/pt-br
+https://www.gov.br/mast/pt-br
+https://www.gov.br/museugoeldi/pt-br
+https://www.gov.br/on/pt-br
+https://www.gov.br/inma/pt-br
+https://www.gov.br/cnen/pt-br
+https://www.gov.br/aeb/pt-br
+https://www.gov.br/cnpq/pt-br
+https://butantan.gov.br/
+https://www.ipt.br/
+https://www.ial.sp.gov.br/
+https://www.biologico.sp.gov.br/
+https://www.iac.sp.gov.br/
+https://www.pesca.sp.gov.br/
+
 
 # ── UNIVERSIDADES FEDERAIS ────────────────────────────────────
 https://www.ufmg.br
