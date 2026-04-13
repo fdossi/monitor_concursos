@@ -1,0 +1,55 @@
+name: Monitor Concursos Docentes
+
+on:
+  schedule:
+    # 11:00 UTC = 08:00 BRT (UTC-3)
+    - cron: "0 11 * * *"
+  # Permite execução manual pelo painel do GitHub Actions
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      # ── 1. Checkout ────────────────────────────────────────
+      - name: Checkout repositório
+        uses: actions/checkout@v4
+
+      # ── 2. Python ──────────────────────────────────────────
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      # ── 3. Dependências ────────────────────────────────────
+      - name: Instalar dependências
+        run: pip install --upgrade pip && pip install -r requirements.txt
+
+      # ── 4. Executar monitor ────────────────────────────────
+      - name: Executar monitor.py
+        run: python monitor.py
+
+      # ── 5. Preparar pasta de publicação ───────────────────
+      - name: Preparar diretório de publicação
+        run: |
+          mkdir -p _deploy
+          cp index.html _deploy/index.html
+          # Desativa Jekyll para publicar HTML puro
+          touch _deploy/.nojekyll
+
+      # ── 6. Publicar no GitHub Pages ────────────────────────
+      - name: Deploy → GitHub Pages (branch gh-pages)
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_deploy
+          publish_branch: gh-pages
+          commit_message: "chore: atualização automática – run ${{ github.run_id }}"
+          # Mantém histórico de commits na branch gh-pages
+          force_orphan: false

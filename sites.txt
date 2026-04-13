@@ -1,0 +1,122 @@
+# =============================================================
+# Monitor de Concursos Docentes — sites.txt
+# =============================================================
+# Um URL por linha. Linhas com # são comentários.
+# Institutos Federais são detectados automaticamente pelo domínio
+# (if*.edu.br ou cefet*.edu.br) e recebem busca adicional de
+# palavras-chave de Biologia / Ciências Biológicas.
+# =============================================================
+
+# ── UNIVERSIDADES FEDERAIS ────────────────────────────────────
+https://www.ufmg.br
+https://ufrj.br
+https://www.unb.br
+https://ufsc.br
+https://www.ufrgs.br
+https://www.ufc.br
+https://www.ufba.br
+https://www.ufpe.br
+https://www.ufpr.br
+https://www.ufsm.br
+https://www.ufg.br
+https://www.ufam.edu.br
+https://www.ufpa.br
+https://www.ufv.br
+https://www.ufscar.br
+https://www.unifesp.br
+https://www.ufes.br
+https://www.ufmt.br
+https://www.ufms.br
+https://www.ufal.edu.br
+https://www.ufrn.br
+https://www.ufpb.br
+https://www.ufma.br
+https://www.ufpi.br
+https://ufrr.br
+https://www.ufac.br
+https://www.unir.br
+https://portal.unifap.edu.br
+https://www.uft.edu.br
+https://www.ufop.br
+https://www.ufjf.br
+https://www.ufla.br
+https://www.uftm.edu.br
+https://www.unifal-mg.edu.br
+https://www.ufvjm.edu.br
+https://www.ufob.edu.br
+https://www.ufsb.edu.br
+https://www.unilab.edu.br
+https://www.unila.edu.br
+https://www.uffs.edu.br
+https://www.ufabc.edu.br
+https://www.utfpr.edu.br
+https://www.ufcspa.edu.br
+https://www.ufpel.edu.br
+https://www.furg.br
+https://www.unipampa.edu.br
+https://ufrrj.br
+https://www.unirio.br
+https://www.uff.br
+https://www.unimontes.br
+
+# ── UNIVERSIDADES ESTADUAIS ──────────────────────────────────
+https://www.usp.br
+https://www.unicamp.br
+https://www.unesp.br
+https://www.uerj.br
+https://www.ueg.br
+https://www.uem.br
+https://www.uel.br
+https://www.uesc.br
+https://www.uefs.br
+https://www.uneb.br
+https://www.uesb.br
+https://www.uepg.br
+https://www.unicentro.br
+https://www.unioeste.br
+https://www.uepb.edu.br
+https://www.uern.br
+https://www.uece.br
+https://www.urca.br
+https://www.uema.br
+https://www.uergs.edu.br
+https://www.uenp.edu.br
+https://www.uva.br
+https://www.udesc.br
+https://www.uespi.br
+
+# ── INSTITUTOS FEDERAIS ──────────────────────────────────────
+https://www.ifsp.edu.br
+https://www.ifrn.edu.br
+https://www.ifmg.edu.br
+https://www.ifpb.edu.br
+https://www.ifba.edu.br
+https://www.ifsc.edu.br
+https://www.ifrs.edu.br
+https://www.ifsul.edu.br
+https://www.ifpr.edu.br
+https://www.ifes.edu.br
+https://www.ifam.edu.br
+https://www.ifpa.edu.br
+https://www.ifma.edu.br
+https://www.ifpi.edu.br
+https://www.ifce.edu.br
+https://www.ifpe.edu.br
+https://www.ifsertao-pe.edu.br
+https://www.ifnmg.edu.br
+https://www.iftm.edu.br
+https://www.ifg.edu.br
+https://www.ifgoiano.edu.br
+https://www.ifms.edu.br
+https://www.ifmt.edu.br
+https://www.ifb.edu.br
+https://www.ifto.edu.br
+https://www.ifro.edu.br
+https://www.ifrr.edu.br
+https://www.ifac.edu.br
+https://www.ifap.edu.br
+https://www.cefetmg.br
+https://www.cefet-rj.br
+https://www.ifsuldeminas.edu.br
+https://www.iff.edu.br
+https://www.ifsudestemg.edu.br

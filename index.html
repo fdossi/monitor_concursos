@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monitor de Concursos Docentes</title>
+<script src="https://cdn.counter.dev/script.js" data-id="99568f51-253a-4f49-8638-ab6f1ae2fbe0" data-utcoffset="-3"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+         background: #f0f2f5; color: #1a1a2e; line-height: 1.6;
+         display: flex; flex-direction: column; min-height: 100vh; align-items: center;
+         justify-content: center; }
+  header { background: linear-gradient(135deg,#1a1a2e 0%,#16213e 55%,#0f3460 100%);
+           color: #fff; padding: 3rem 2rem; text-align: center; width: 100%; }
+  h1 { font-size: clamp(1.4rem,4vw,2.2rem); font-weight: 800; margin-bottom: .5rem; }
+  .sub { opacity: .78; font-size: .9rem; }
+  .box { background: #fff; border-radius: 14px; padding: 2.5rem 2rem;
+         box-shadow: 0 4px 20px rgba(0,0,0,.1); text-align: center;
+         max-width: 480px; margin: 3rem auto; }
+  .spinner { width: 48px; height: 48px; border: 5px solid #e5e7eb;
+             border-top-color: #2563eb; border-radius: 50%;
+             animation: spin 1s linear infinite; margin: 0 auto 1.2rem; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  p { color: #6b7280; font-size: .9rem; }
+  footer { margin-top: auto; padding: 1.5rem; font-size: .78rem; color: #9ca3af; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>&#128218; Monitor de Concursos Docentes</h1>
+  <p class="sub">Monitoramento automático · Universidades e Institutos Federais · Brasil</p>
+</header>
+
+<div class="box">
+  <div class="spinner"></div>
+  <h2 style="margin-bottom:.6rem;color:#374151">Aguardando primeira execução</h2>
+  <p>
+    O relatório será gerado automaticamente pelo GitHub Actions na próxima
+    execução agendada (08:00 BRT) ou ao disparar o workflow manualmente.
+  </p>
+</div>
+
+<footer>
+  Atualizado automaticamente via GitHub Actions &middot; Dados coletados de fontes públicas
+</footer>
+
+</body>
+</html>
